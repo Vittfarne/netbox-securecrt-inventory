@@ -109,7 +109,7 @@ func (i *InventorySync) getDeviceSessions(devices []netbox.DeviceWithConfigConte
 			return nil, err
 		}
 
-		ipAddress := i.getPrimaryIP(device.PrimaryIp4)
+		ipAddress := i.getPrimaryIP(device.PrimaryIp)
 		if ipAddress == nil {
 			return nil, fmt.Errorf("primary ip is not set on %s", device.Name)
 		}
@@ -175,7 +175,7 @@ func (i *InventorySync) getVirtualMachineSessions(devices []netbox.VirtualMachin
 			return nil, err
 		}
 
-		ipAddress := i.getPrimaryIP(device.PrimaryIp4)
+		ipAddress := i.getPrimaryIP(device.PrimaryIp)
 		if ipAddress == nil {
 			return nil, fmt.Errorf("primary ip is not set on %s", device.Name)
 		}
